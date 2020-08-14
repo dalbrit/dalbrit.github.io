@@ -12,14 +12,14 @@ author_profile: true
 
 ## Papers
 
-1. Localised necessary conditions for singularity formation in the Navier-Stokes equations with curved boundary (with T. Barker). J. Differential Equations. 269(9):7529-7573, 2020. [arXiv] [Journal] <details><summary>Abstract</summary>
-<p>
-$\int_0^1$
-</p>
+1. Localised necessary conditions for singularity formation in the Navier-Stokes equations with curved boundary (with T. Barker). J. Differential Equations. 269(9):7529-7573, 2020. [[Journal]](https://doi.org/10.1016/j.jde.2020.06.009) [[arXiv]](https://arxiv.org/abs/1811.00507)
+<details><summary>Abstract</summary>
+$\int_0^1$ try me
 </details>
-2. On local Type I singularities of the Navier-Stokes equations and Liouville theorems (with T. Barker). J. Math. Fluid Mech. (2019) 21:43.  [arXiv] [Journal]
-3. Global weak Besov solutions of the Navier-Stokes equations and applications (with T. Barker). Arch. Rational Mech. Anal., 232(1):197–263, 2019. [arXiv] [Journal]
-4. Blow-up criteria for the Navier-Stokes equations in non-endpoint critical Besov spaces. Anal. PDE, 11(6):1415–1456, 2018. [arXiv] [Journal]
+
+2. On local Type I singularities of the Navier-Stokes equations and Liouville theorems (with T. Barker). J. Math. Fluid Mech. (2019) 21:43. [[Journal]](https://doi.org/10.1007/s00021-019-0448-z) [[arXiv]](https://arxiv.org/abs/1811.00502)
+3. Global weak Besov solutions of the Navier-Stokes equations and applications (with T. Barker). Arch. Rational Mech. Anal., 232(1):197–263, 2019.[[Journal]](https://doi.org/10.1007/s00205-018-1319-0) [[arXiv]](https://arxiv.org/abs/1802.03164)
+4. Blow-up criteria for the Navier-Stokes equations in non-endpoint critical Besov spaces. Anal. PDE, 11(6):1415–1456, 2018. [[Journal]](https://doi.org/10.2140/apde.2018.11.1415) [[arXiv]](https://arxiv.org/abs/1612.04439)
 
 ## In preparation:
 
