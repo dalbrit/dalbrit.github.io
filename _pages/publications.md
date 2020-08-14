@@ -13,6 +13,7 @@ author_profile: true
 ## Papers
 
 - Localised necessary conditions for singularity formation in the Navier-Stokes equations with curved boundary
+
 (with T. Barker). **J. Differential Equations**, 269(9):7529-7573, 2020. [[Journal]](https://doi.org/10.1016/j.jde.2020.06.009) [[arXiv]](https://arxiv.org/abs/1811.00507) 
 <details><summary>[Abstract]</summary>
 We generalize
