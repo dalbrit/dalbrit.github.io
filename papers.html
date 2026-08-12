@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications and preprints — Dallas Albritton</title>
+<style>
+/* 
+   Academic Classic Theme 
+   Updated with larger typography, wider margins, and classic line spacing
+*/
+:root { 
+  color-scheme: light dark; 
+  --fg: #222222; 
+  --bg: #ffffff; 
+  --muted: #555555;
+  --line: #cccccc; 
+  --accent: #1a4f85; 
+  --accent-hover: #0d2b4a;
+  --card: #fcfcfc;
+}
+
+@media (prefers-color-scheme: dark) { 
+  :root { 
+    --fg: #dddddd; 
+    --bg: #111111; 
+    --muted: #888888;
+    --line: #444444; 
+    --accent: #5a9bd4; 
+    --accent-hover: #8cb8e6;
+    --card: #181818;
+  } 
+}
+
+* { box-sizing: border-box; }
+
+/* 
+  Typography: Charter / Cambria stack. 
+  Line-height reduced from 1.7 to 1.5 for a tighter, more traditional reading experience.
+*/
+body { 
+  font: 18px/1.25 Charter, "Bitstream Charter", Cambria, Georgia, serif;
+  color: var(--fg); 
+  background: var(--bg); 
+  margin: 0; 
+}
+
+/* Max-width at 740px for wider desktop margins */
+.wrap { max-width: 740px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border 0.2s ease; }
+a:hover { border-bottom: 1px solid var(--accent); color: var(--accent-hover); }
+
+h1 { font-size: 2.4rem; margin: 0 0 .5rem; font-weight: normal; letter-spacing: -0.02em; }
+h2 { font-size: 1.5rem; margin: 2.8rem 0 .6rem; padding-bottom: .2rem; border-bottom: 1px solid var(--line); font-weight: normal; }
+h3 { font-size: 1.2rem; margin: 2rem 0 .2rem; font-weight: 600; font-style: italic; }
+
+.sub { color: var(--muted); margin: 0 0 1.5rem; font-style: italic; }
+
+.count { color: var(--muted); font-size: 1rem; margin: .1rem 0 1rem; font-style: italic; }
+
+ol.works { list-style: none; margin: 0; padding: 0; }
+
+ol.works > li { 
+  display: grid; 
+  grid-template-columns: 4.5rem 1fr; /* Left column: 4.5rem for the year; Right column: remaining width for content */
+  gap: 1rem;
+  padding: 1rem 0; 
+  border-bottom: 1px dashed var(--line);
+}
+ol.works > li:last-child { border-bottom: none; }
+
+.wy { 
+  color: var(--muted); 
+  font-variant-numeric: tabular-nums; 
+  font-size: 1rem; 
+  /* Removed float: right */
+}
+
+.wy { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 1rem; float: right; }
+/* Tightened line-height specifically for multi-line paper titles */
+.wt { font-weight: bold; font-size: 1.15rem; line-height: 1.25; }
+.wa { color: var(--fg); font-style: italic; } 
+.wv { color: var(--muted); font-size: 1rem; }
+
+.wtags { display: block; margin-top: .4rem; }
+.tg { 
+  font: inherit; font-size: .9rem; cursor: pointer; border: none; background: none;
+  color: var(--muted); padding: 0 .5rem 0 0; text-transform: lowercase; 
+}
+.tg:hover { color: var(--accent); }
+
+.wl { display: block; margin-top: .5rem; font-size: .95rem; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; } 
+.wl .lk { margin-right: 1.2rem; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; }
+
+.cv-head h1 { margin-bottom: .2rem; }
+.cv-head .role { margin: 0; font-size: 1.2rem; font-style: italic; color: var(--muted); }
+.cv-contact { color: var(--muted); font-size: 1rem; margin: .5rem 0 0; }
+.cv-nav { margin: 1.5rem 0 2.5rem; font-size: 1rem; display: flex; gap: 1.5rem; flex-wrap: wrap; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 0.6rem 0; }
+.cv-nav a.here { font-weight: 600; color: var(--fg); border-bottom: none; }
+
+.cv section { margin: 0 0 2.5rem; }
+.cv-list { margin: .5rem 0 0; }
+.cv-list .row { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; padding: .3rem 0; }
+.cv-list .dt { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 1rem; }
+.cv-list .dd { margin: 0; }
+.cv-list .dd .meta { color: var(--muted); font-style: italic; }
+
+.bib, .book-list li { background: var(--bg); border: none; padding: 0; margin-bottom: 1.2rem; }
+
+details.section > summary { 
+  cursor: pointer; font-weight: normal; font-size: 1.5rem; color: var(--fg);
+  padding: .8rem 0; border-bottom: 1px solid var(--line); list-style-position: inside; 
+}
+details.section > summary:hover { color: var(--accent); }
+
+@media print {
+  .cv-nav, footer, .wrap > p:first-child, .tg { display: none; }
+  .wrap { max-width: none; padding: 0; margin: 0; }
+  body { font-size: 11pt; color: #000; background: #fff; }
+  a { color: #000; text-decoration: none; border: none; }
+  h1 { font-size: 18pt; } 
+  .cv h2 { font-size: 14pt; border-bottom: 1px solid #000; padding-bottom: 2px; }
+  .cv-list .row { break-inside: avoid; gap: 0.5rem; }
+  .cv-list .dt { color: #000; }
+  ol.works > li { border-bottom: none; padding: 0.5rem 0; }
+}
+
+footer { margin-top: 4rem; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); padding-top: 1.5rem; text-align: center; }
+</style>
+
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},
+  options:{skipHtmlTags:['script','style']}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body><div class="wrap">
+<p><a href="../index.html">&larr; Home</a></p>
+<h1>Publications and preprints</h1>
+<div class="search">
+<input id="q" type="search" placeholder="Search title, coauthor, journal, arXiv, tag…" autocomplete="off">
+<select id="kind"><option value="">all kinds</option><option value="paper">paper</option></select>
+<select id="sort"><option value="year-desc">newest first</option><option value="year-asc">oldest first</option><option value="title">by title</option></select>
+</div>
+<div id="chips"><button class="chip" data-t="math">math <span>24</span></button><button class="chip" data-t="leray-hopf-solutions">leray-hopf-solutions <span>1</span></button><button class="chip" data-t="navier-stokes-equations">navier-stokes-equations <span>1</span></button><button class="chip" data-t="non-uniqueness">non-uniqueness <span>1</span></button></div>
+<p id="count"></p>
+<ol id="list" class="works">
+<li class="work" data-kind="paper" data-year="2026" data-tags="math" data-s="forward self-similar solutions to the 2d navier--stokes equations julien guillod mikhail korobkov xiao ren arxiv preprint arxiv:2601.03161. submitted to advances in math arxiv preprint arxiv:2601.03161. submitted to advances in math math"><span class="wy">2026</span><span class="wmain"><span class="wt"><a href="https://arxiv.org/abs/2601.03161">Forward self-similar solutions to the 2D Navier--Stokes equations</a></span> <span class="wa">with Julien Guillod, Mikhail Korobkov, Xiao Ren</span> <span class="wv">arXiv preprint arXiv:2601.03161. Submitted to Advances in Math</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://arxiv.org/abs/2601.03161">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2026" data-tags="math" data-s="kinetic shock profiles for the landau equation jacob bedrossian matthew novack ars inveniendi analytica ars inveniendi analytica math"><span class="wy">2026</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.15781/5Z5B3583">Kinetic shock profiles for the Landau equation</a></span> <span class="wa">with Jacob Bedrossian, Matthew Novack</span> <span class="wv">Ars Inveniendi Analytica</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.15781/5Z5B3583">journal</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2025" data-tags="math" data-s="sharp uniform-in-diffusivity mixing rates for passive scalars in parallel shear flows rajendra beekie arxiv preprint arxiv:2511.18536. submitted to annals of pde arxiv preprint arxiv:2511.18536. submitted to annals of pde math"><span class="wy">2025</span><span class="wmain"><span class="wt"><a href="https://arxiv.org/abs/2511.18536">Sharp uniform-in-diffusivity mixing rates for passive scalars in parallel shear flows</a></span> <span class="wa">with Rajendra Beekie</span> <span class="wv">arXiv preprint arXiv:2511.18536. Submitted to Annals of PDE</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://arxiv.org/abs/2511.18536">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2025" data-tags="math" data-s="vanishing viscosity non-unique solutions to the forced 2d euler equations maria colombo giulia mescolini arxiv preprint arxiv:2507.19257. submitted to cpam arxiv preprint arxiv:2507.19257. submitted to cpam math"><span class="wy">2025</span><span class="wmain"><span class="wt"><a href="https://arxiv.org/abs/2507.19257">Vanishing viscosity non-unique solutions to the forced 2D Euler equations</a></span> <span class="wa">with Maria Colombo, Giulia Mescolini</span> <span class="wv">arXiv preprint arXiv:2507.19257. Submitted to CPAM</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://arxiv.org/abs/2507.19257">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2025" data-tags="math" data-s="rods in flows: the pde theory of immersed elastic filaments laurel ohm arxiv preprint arxiv:2503.14440. submitted to arma arxiv preprint arxiv:2503.14440. submitted to arma math"><span class="wy">2025</span><span class="wmain"><span class="wt"><a href="https://arxiv.org/abs/2503.14440">Rods in flows: the PDE theory of immersed elastic filaments</a></span> <span class="wa">with Laurel Ohm</span> <span class="wv">arXiv preprint arXiv:2503.14440. Submitted to ARMA</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://arxiv.org/abs/2503.14440">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2025" data-tags="math" data-s="linear and nonlinear instability of vortex columns wojciech o\.za\&#x27;nski journal of the european mathematical society journal of the european mathematical society math"><span class="wy">2025</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.4171/jems/1749">Linear and nonlinear instability of vortex columns</a></span> <span class="wa">with Wojciech O\.za\&#x27;nski</span> <span class="wv">Journal of the European Mathematical Society</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.4171/jems/1749">journal</a><a class="lk" href="https://arxiv.org/abs/2310.20674">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2024" data-tags="math" data-s="instability and non-uniqueness for the 2d euler equations, after m. vishik: (ams-219) elia brué camillo de lellis maria colombo vikram giri maximilian janisch hyunju kwon math"><span class="wy">2024</span><span class="wmain"><span class="wt"><a href="https://press.princeton.edu/books/paperback/9780691257532/instability-and-non-uniqueness-for-the-2d-euler-equations-after-m?srsltid=AfmBOoqiL3rhw0NCqdaMKMwx06SLusqvvo7QG-XwjOlnO_J3jNq52qeP">Instability and Non-uniqueness for the 2D Euler Equations, after M. Vishik: (AMS-219)</a></span> <span class="wa">with Elia Brué, Camillo De Lellis, Maria Colombo, Vikram Giri, Maximilian Janisch, Hyunju Kwon</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://press.princeton.edu/books/paperback/9780691257532/instability-and-non-uniqueness-for-the-2d-euler-equations-after-m?srsltid=AfmBOoqiL3rhw0NCqdaMKMwx06SLusqvvo7QG-XwjOlnO_J3jNq52qeP">journal</a><a class="lk" href="https://arxiv.org/abs/2112.04943">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2024" data-tags="math" data-s="variational methods for the kinetic fokker–planck equation scott armstrong jean-christophe mourrat matthew novack analysis \&amp; pde analysis \&amp; pde math"><span class="wy">2024</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.2140/apde.2024.17.1953">Variational methods for the kinetic Fokker–Planck equation</a></span> <span class="wa">with Scott Armstrong, Jean-Christophe Mourrat, Matthew Novack</span> <span class="wv">Analysis \&amp; PDE</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.2140/apde.2024.17.1953">journal</a><a class="lk" href="https://arxiv.org/abs/1902.04037">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2023" data-tags="math" data-s="remarks on the complex euler equations w. jacob ogden communications on pure and applied analysis communications on pure and applied analysis math"><span class="wy">2023</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.3934/cpaa.2023110">Remarks on the complex Euler equations</a></span> <span class="wa">with W. Jacob Ogden</span> <span class="wv">Communications on Pure and Applied Analysis</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.3934/cpaa.2023110">journal</a><a class="lk" href="https://arxiv.org/abs/2310.03120">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2023" data-tags="math" data-s="sharp bounds on enstrophy growth for viscous scalar conservation laws nicola de nitti nonlinearity nonlinearity math"><span class="wy">2023</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.1088/1361-6544/ad073f">Sharp bounds on enstrophy growth for viscous scalar conservation laws</a></span> <span class="wa">with Nicola De Nitti</span> <span class="wv">Nonlinearity</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.1088/1361-6544/ad073f">journal</a><a class="lk" href="https://arxiv.org/abs/2308.06586">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2023" data-tags="math" data-s="epsilon regularity for the navier-stokes equations via weak-strong uniqueness tobias barker christophe prange j. math. fluid mech. j. math. fluid mech. math"><span class="wy">2023</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.1007/s00021-023-00780-0">Epsilon regularity for the Navier-Stokes equations via weak-strong uniqueness</a></span> <span class="wa">with Tobias Barker, Christophe Prange</span> <span class="wv">J. Math. Fluid Mech.</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.1007/s00021-023-00780-0">journal</a><a class="lk" href="https://arxiv.org/abs/2211.16188">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2023" data-tags="math" data-s="gluing non-unique navier-stokes solutions elia brué maria colombo ann. pde ann. pde math"><span class="wy">2023</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.1007/s40818-023-00155-8">Gluing non-unique Navier-Stokes solutions</a></span> <span class="wa">with Elia Brué, Maria Colombo</span> <span class="wv">Ann. PDE</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.1007/s40818-023-00155-8">journal</a><a class="lk" href="http://arxiv.org/abs/2209.03530">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2023" data-tags="math" data-s="non-uniqueness of leray solutions to the hypodissipative navier-stokes equations in two dimensions maria colombo comm. math. phys. comm. math. phys. math"><span class="wy">2023</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.1007/s00220-023-04725-6">Non-uniqueness of Leray solutions to the hypodissipative Navier-Stokes equations in two dimensions</a></span> <span class="wa">with Maria Colombo</span> <span class="wv">Comm. Math. Phys.</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.1007/s00220-023-04725-6">journal</a><a class="lk" href="http://arxiv.org/abs/2209.08713">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2023" data-tags="math" data-s="on the stabilizing effect of swimming in an active suspension laurel ohm siam j. math. anal. siam j. math. anal. math"><span class="wy">2023</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.1137/22M1496037">On the stabilizing effect of swimming in an active suspension</a></span> <span class="wa">with Laurel Ohm</span> <span class="wv">SIAM J. Math. Anal.</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.1137/22M1496037">journal</a><a class="lk" href="https://arxiv.org/abs/2205.04922">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2023" data-tags="math" data-s="localized smoothing and concentration for the navier-stokes equations in the half space tobias barker christophe prange j. funct. anal. j. funct. anal. math"><span class="wy">2023</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.1016/j.jfa.2022.109729">Localized smoothing and concentration for the Navier-Stokes equations in the half space</a></span> <span class="wa">with Tobias Barker, Christophe Prange</span> <span class="wv">J. Funct. Anal.</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.1016/j.jfa.2022.109729">journal</a><a class="lk" href="http://arxiv.org/abs/2112.10705">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2023" data-tags="math" data-s="regularity properties of passive scalars with rough divergence-free drifts hongjie dong arch. ration. mech. anal. arch. ration. mech. anal. math"><span class="wy">2023</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.1007/s00205-023-01896-3">Regularity properties of passive scalars with rough divergence-free drifts</a></span> <span class="wa">with Hongjie Dong</span> <span class="wv">Arch. Ration. Mech. Anal.</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.1007/s00205-023-01896-3">journal</a><a class="lk" href="https://arxiv.org/abs/2107.12511">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2022" data-tags="leray-hopf-solutions navier-stokes-equations non-uniqueness" data-s="non-uniqueness of leray solutions of the forced navier-stokes equations elia brué maria colombo annals of mathematics annals of mathematics leray-hopf-solutions navier-stokes-equations non-uniqueness"><span class="wy">2022</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.4007/annals.2022.196.1.3">Non-uniqueness of Leray solutions of the forced Navier-Stokes equations</a></span> <span class="wa">with Elia Brué, Maria Colombo</span> <span class="wv">Annals of Mathematics</span><span class="wtags"><button class="tg" data-t="leray-hopf-solutions">#leray-hopf-solutions</button><button class="tg" data-t="navier-stokes-equations">#navier-stokes-equations</button><button class="tg" data-t="non-uniqueness">#non-uniqueness</button></span><span class="wl"><a class="lk" href="https://doi.org/10.4007/annals.2022.196.1.3">journal</a><a class="lk" href="https://arxiv.org/abs/2112.03116">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2022" data-tags="math" data-s="enhanced dissipation and h\&quot;ormander&#x27;s hypoellipticity rajendra beekie matthew novack journal of functional analysis journal of functional analysis math"><span class="wy">2022</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.1016/j.jfa.2022.109522">Enhanced dissipation and H\&quot;ormander&#x27;s hypoellipticity</a></span> <span class="wa">with Rajendra Beekie, Matthew Novack</span> <span class="wv">Journal of Functional Analysis</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.1016/j.jfa.2022.109522">journal</a><a class="lk" href="https://arxiv.org/abs/2105.12308">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2022" data-tags="math" data-s="remarks on sparseness and regularity of navier--stokes solutions zachary bradshaw nonlinearity nonlinearity math"><span class="wy">2022</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.1088/1361-6544/ac62de">Remarks on sparseness and regularity of Navier--Stokes solutions</a></span> <span class="wa">with Zachary Bradshaw</span> <span class="wv">Nonlinearity</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.1088/1361-6544/ac62de">journal</a><a class="lk" href="https://arxiv.org/abs/2110.02187">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2022" data-tags="math" data-s="long-time behavior of scalar conservation laws with critical dissipation rajendra beekie annales de l&#x27;institut henri poincar\&#x27;e c, analyse non lin\&#x27;eaire annales de l&#x27;institut henri poincar\&#x27;e c, analyse non lin\&#x27;eaire math"><span class="wy">2022</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.4171/aihpc/7">Long-time behavior of scalar conservation laws with critical dissipation</a></span> <span class="wa">with Rajendra Beekie</span> <span class="wv">Annales de l&#x27;Institut Henri Poincar\&#x27;e C, Analyse non lin\&#x27;eaire</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.4171/aihpc/7">journal</a><a class="lk" href="https://arxiv.org/abs/2010.09065">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2021" data-tags="math" data-s="non-decaying solutions to the critical surface quasi-geostrophic equations with symmetries zachary bradshaw transactions of the american mathematical society transactions of the american mathematical society math"><span class="wy">2021</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.1090/tran/8500">Non-decaying solutions to the critical surface quasi-geostrophic equations with symmetries</a></span> <span class="wa">with Zachary Bradshaw</span> <span class="wv">Transactions of the American Mathematical Society</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.1090/tran/8500">journal</a><a class="lk" href="https://arxiv.org/abs/2011.10856">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2020" data-tags="math" data-s="localised necessary conditions for singularity formation in the navier-stokes equations with curved boundary tobias barker journal of differential equations journal of differential equations math"><span class="wy">2020</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.1016/j.jde.2020.06.009">Localised necessary conditions for singularity formation in the Navier-Stokes equations with curved boundary</a></span> <span class="wa">with Tobias Barker</span> <span class="wv">Journal of Differential Equations</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.1016/j.jde.2020.06.009">journal</a><a class="lk" href="https://arxiv.org/abs/1811.00507">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2019" data-tags="math" data-s="on local type i singularities of the navier-stokes equations and liouville theorems tobias barker j. math. fluid mech. j. math. fluid mech. math"><span class="wy">2019</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.1007/s00021-019-0448-z">On local Type I singularities of the Navier-Stokes equations and Liouville theorems</a></span> <span class="wa">with Tobias Barker</span> <span class="wv">J. Math. Fluid Mech.</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.1007/s00021-019-0448-z">journal</a><a class="lk" href="https://arxiv.org/abs/1811.00502">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2019" data-tags="math" data-s="global weak besov solutions of the navier-stokes equations and applications tobias barker arch. ration. mech. anal. arch. ration. mech. anal. math"><span class="wy">2019</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.1007/s00205-018-1319-0">Global weak Besov solutions of the Navier-Stokes equations and applications</a></span> <span class="wa">with Tobias Barker</span> <span class="wv">Arch. Ration. Mech. Anal.</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.1007/s00205-018-1319-0">journal</a><a class="lk" href="https://arxiv.org/abs/1802.03164">arXiv</a></span></span></li>
+<li class="work" data-kind="paper" data-year="2018" data-tags="math" data-s="blow-up criteria for the navier--stokes equations in non-endpoint critical besov spaces anal. pde anal. pde math"><span class="wy">2018</span><span class="wmain"><span class="wt"><a href="https://doi.org/10.2140/apde.2018.11.1415">Blow-up criteria for the Navier--Stokes equations in non-endpoint critical Besov spaces</a></span> <span class="wv">Anal. PDE</span><span class="wtags"><button class="tg" data-t="math">#math</button></span><span class="wl"><a class="lk" href="https://doi.org/10.2140/apde.2018.11.1415">journal</a><a class="lk" href="https://arxiv.org/abs/1612.04439">arXiv</a></span></span></li>
+</ol>
+
+<script>
+(function(){
+  var list=document.getElementById('list');
+  var works=[].slice.call(list.getElementsByClassName('work'));
+  var q=document.getElementById('q'),kind=document.getElementById('kind'),sort=document.getElementById('sort');
+  var count=document.getElementById('count'),active={};
+  function chips(){[].forEach.call(document.querySelectorAll('.chip'),function(c){
+    c.classList.toggle('on',!!active[c.getAttribute('data-t')]);});}
+  function apply(){
+    var terms=q.value.toLowerCase().split(/\s+/).filter(Boolean),k=kind.value,tags=Object.keys(active),shown=0;
+    works.forEach(function(el){
+      var s=el.getAttribute('data-s'),ok=terms.every(function(t){return s.indexOf(t)>=0;});
+      if(ok&&k&&el.getAttribute('data-kind')!==k)ok=false;
+      if(ok&&tags.length){var et=' '+el.getAttribute('data-tags')+' ';
+        ok=tags.every(function(t){return et.indexOf(' '+t+' ')>=0;});}
+      el.style.display=ok?'':'none';if(ok)shown++;});
+    count.textContent=shown+' of '+works.length+' works';chips();
+    var p=new URLSearchParams();
+    if(q.value)p.set('q',q.value);if(k)p.set('kind',k);
+    if(tags.length)p.set('tag',tags.join(','));if(sort.value!=='year-desc')p.set('sort',sort.value);
+    history.replaceState(null,'',location.pathname+(p.toString()?'?'+p.toString():''));
+  }
+  function doSort(){
+    var v=sort.value,arr=works.slice();
+    arr.sort(function(a,b){
+      if(v==='title')return a.querySelector('.wt').textContent.localeCompare(b.querySelector('.wt').textContent);
+      var ya=+a.getAttribute('data-year'),yb=+b.getAttribute('data-year');
+      return v==='year-asc'?ya-yb:yb-ya;});
+    arr.forEach(function(el){list.appendChild(el);});
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest?e.target.closest('.tg,.chip'):null;if(!b)return;
+    if(b.tagName==='A')return;e.preventDefault();var t=b.getAttribute('data-t');
+    if(active[t])delete active[t];else active[t]=1;apply();});
+  q.addEventListener('input',apply);kind.addEventListener('change',apply);
+  sort.addEventListener('change',function(){doSort();apply();});
+  var pp=new URLSearchParams(location.search);
+  if(pp.get('q'))q.value=pp.get('q');if(pp.get('kind'))kind.value=pp.get('kind');
+  if(pp.get('sort'))sort.value=pp.get('sort');
+  if(pp.get('author'))q.value=(q.value+' '+pp.get('author')).trim();
+  if(pp.get('tag'))pp.get('tag').split(',').forEach(function(t){if(t)active[t]=1;});
+  doSort();apply();
+})();
+</script>
+
+<footer>Under construction. Adapted from Terence Tao's website
+<a href="https://github.com/teorth/tao-web">github.com/teorth/tao-web</a></footer>
+</div></body></html>

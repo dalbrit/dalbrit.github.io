@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dallas Albritton -- academic website</title>
+<style>
+/* 
+   Academic Classic Theme 
+   Updated with larger typography, wider margins, and classic line spacing
+*/
+:root { 
+  color-scheme: light dark; 
+  --fg: #222222; 
+  --bg: #ffffff; 
+  --muted: #555555;
+  --line: #cccccc; 
+  --accent: #1a4f85; 
+  --accent-hover: #0d2b4a;
+  --card: #fcfcfc;
+}
+
+@media (prefers-color-scheme: dark) { 
+  :root { 
+    --fg: #dddddd; 
+    --bg: #111111; 
+    --muted: #888888;
+    --line: #444444; 
+    --accent: #5a9bd4; 
+    --accent-hover: #8cb8e6;
+    --card: #181818;
+  } 
+}
+
+* { box-sizing: border-box; }
+
+/* 
+  Typography: Charter / Cambria stack. 
+  Line-height reduced from 1.7 to 1.5 for a tighter, more traditional reading experience.
+*/
+body { 
+  font: 18px/1.25 Charter, "Bitstream Charter", Cambria, Georgia, serif;
+  color: var(--fg); 
+  background: var(--bg); 
+  margin: 0; 
+}
+
+/* Max-width at 740px for wider desktop margins */
+.wrap { max-width: 740px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border 0.2s ease; }
+a:hover { border-bottom: 1px solid var(--accent); color: var(--accent-hover); }
+
+h1 { font-size: 2.4rem; margin: 0 0 .5rem; font-weight: normal; letter-spacing: -0.02em; }
+h2 { font-size: 1.5rem; margin: 2.8rem 0 .6rem; padding-bottom: .2rem; border-bottom: 1px solid var(--line); font-weight: normal; }
+h3 { font-size: 1.2rem; margin: 2rem 0 .2rem; font-weight: 600; font-style: italic; }
+
+.sub { color: var(--muted); margin: 0 0 1.5rem; font-style: italic; }
+
+.count { color: var(--muted); font-size: 1rem; margin: .1rem 0 1rem; font-style: italic; }
+
+ol.works { list-style: none; margin: 0; padding: 0; }
+ol.works > li { 
+  display: flex; 
+  flex-direction: column;
+  gap: .25rem;
+  padding: 1rem 0; 
+  border-bottom: 1px dashed var(--line);
+}
+ol.works > li:last-child { border-bottom: none; }
+
+.wy { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 1rem; float: right; }
+/* Tightened line-height specifically for multi-line paper titles */
+.wt { font-weight: bold; font-size: 1.15rem; line-height: 1.25; }
+.wa { color: var(--fg); font-style: italic; } 
+.wv { color: var(--muted); font-size: 1rem; }
+
+.wtags { display: block; margin-top: .4rem; }
+.tg { 
+  font: inherit; font-size: .9rem; cursor: pointer; border: none; background: none;
+  color: var(--muted); padding: 0 .5rem 0 0; text-transform: lowercase; 
+}
+.tg:hover { color: var(--accent); }
+
+.wl { display: block; margin-top: .5rem; font-size: .95rem; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; } 
+.wl .lk { margin-right: 1.2rem; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; }
+
+.cv-head h1 { margin-bottom: .2rem; }
+.cv-head .role { margin: 0; font-size: 1.2rem; font-style: italic; color: var(--muted); }
+.cv-contact { color: var(--muted); font-size: 1rem; margin: .5rem 0 0; }
+.cv-nav { margin: 1.5rem 0 2.5rem; font-size: 1rem; display: flex; gap: 1.5rem; flex-wrap: wrap; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 0.6rem 0; }
+.cv-nav a.here { font-weight: 600; color: var(--fg); border-bottom: none; }
+
+.cv section { margin: 0 0 2.5rem; }
+.cv-list { margin: .5rem 0 0; }
+.cv-list .row { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; padding: .3rem 0; }
+.cv-list .dt { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 1rem; }
+.cv-list .dd { margin: 0; }
+.cv-list .dd .meta { color: var(--muted); font-style: italic; }
+
+.bib, .book-list li { background: var(--bg); border: none; padding: 0; margin-bottom: 1.2rem; }
+
+details.section > summary { 
+  cursor: pointer; font-weight: normal; font-size: 1.5rem; color: var(--fg);
+  padding: .8rem 0; border-bottom: 1px solid var(--line); list-style-position: inside; 
+}
+details.section > summary:hover { color: var(--accent); }
+
+@media print {
+  .cv-nav, footer, .wrap > p:first-child, .tg { display: none; }
+  .wrap { max-width: none; padding: 0; margin: 0; }
+  body { font-size: 11pt; color: #000; background: #fff; }
+  a { color: #000; text-decoration: none; border: none; }
+  h1 { font-size: 18pt; } 
+  .cv h2 { font-size: 14pt; border-bottom: 1px solid #000; padding-bottom: 2px; }
+  .cv-list .row { break-inside: avoid; gap: 0.5rem; }
+  .cv-list .dt { color: #000; }
+  ol.works > li { border-bottom: none; padding: 0.5rem 0; }
+}
+
+footer { margin-top: 4rem; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); padding-top: 1.5rem; text-align: center; }
+</style>
+
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},
+  options:{skipHtmlTags:['script','style']}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body><div class="wrap">
+<h1>Dallas Albritton</h1>
+
+<!--
+<p class="sub">A structured home for Terence Tao&rsquo;s papers, books and errata, CV, teaching, travel, and interactive tools &mdash; generated from a database maintained (with AI assistance).</p>
+-->
+
+<!-- <h2>About Me</h2> -->
+  <p>Assistant Professor <br>
+  Department of Mathematics <br>
+  University of Wisconsin-Madison </p>
+
+  <p> Email: dalbritton [AT] wisc [DOT] edu <br>
+Office: Van Vleck 323</p>
+
+<p> My primary research interests are in <em>pure and applied aspects of partial differential equations and fluid dynamics</em>.</p>
+
+<p> I am not teaching in the academic year 2026-27.</p>
+
+<!--
+<p>In 2022-23, I was an NSF Postdoctoral Fellow at Princeton University, where my sponsor was Peter Constantin. In 2021-22, I was a Member of the Institute for Advanced Study, where my mentor was Camillo De Lellis. In 2020-21, I was an NSF Postdoctoral Fellow at the Courant Institute at NYU, where my sponsor was Vlad Vicol.  In 2020, I completed my PhD in Mathematics at the University of Minnesota under the supervision of Vladimír Šverák. </p>
+-->
+
+
+<p class="desc"><a href="site/papers.html"><strong>Research</strong></a> </p>
+
+<!-- <p class="desc"><a href="site/teaching.html"><strong>Teaching</strong></a> </p>
+
+<p class="desc"><a href="site/info.html"><strong>Information for Students</strong></a> </p>
+
+<p class="desc"><a href="site/cv.html"><strong>CV</strong></a> </p> -->
+
+
+<p>Support: NSF DMS-2406947 and Sloan Fellowship</p>
+
+<!--
+Weekly Schedule
+Teaching (varies by semester)
+M 3:30 pm PDE & Geometric Analysis Seminar
+W 4 pm Physical Applied Mathematics Seminar (PhAM)
+F 4 pm Colloquium
+-->
+
+<!--
+Information for Students
+To work with me, you should already be enrolled at the University of Wisconsin-Madison. It would be good if you have already taken Math 719 (Graduate PDEs I) or an equivalent course.
+
+Press
+This work with E. Brué and M. Colombo was featured in Quanta, the Research Highlights of the NSF Mathematical Sciences Institutes, and in a Korean popular science magazine aimed at young people. In 2024, we were awarded a Frontiers of Science Awarded at the International Congress of Basic Science.
+
+Teaching
+
+Information for Students
+
+CV
+-->
+
+
+<!--
+<p class="desc"><a href="ai-views.html"><strong>My views on AI</strong></a> &mdash; a living, curated summary of my thinking on AI in mathematics, with a companion interview.</p>
+-->
+<footer>Under construction. Adapted from Terence Tao's website
+<a href="https://github.com/teorth/tao-web">github.com/teorth/tao-web</a>. </footer>
+
+</div></body></html>
